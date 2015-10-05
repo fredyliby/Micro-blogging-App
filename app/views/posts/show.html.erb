@@ -1,5 +1,7 @@
+<div id="post_content">
+
 <h1 class="title">
-	<%= @post.title %>
+	<%= @Post.title %>
 	</h1>
 <p class="date">
 submitted <%= time_ago_words (@post.created.at) %>Ago
@@ -7,3 +9,4 @@ submitted <%= time_ago_words (@post.created.at) %>Ago
 <p class="body">
 <%= @post.body %>
 </p>
+</div>

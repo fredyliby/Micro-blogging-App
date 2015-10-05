@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Firstapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>Firstapp</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', 'href="http://fonts.googleapis.com/css?family=open-sans' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<div id="sidebar">
+		
+		<div id ="logo">
+			<%= link_to root_path do %>
+			<%= image_tag "kasa.jpg" %>
+			<% end %>
+		</div>
+	</div>
+	<Ul>
+		<li class="category">website</li>
+		<li><%= link_to "Blog", root_path %></li>
+		<li>About</li>
+	</Ul>
+	<ul>
+		<li class ="category"></li>
+		<li><a href="mailto :fredyliby@verizon.net">Email</a></li>
+		<li><a href="https://github.com/fredyliby">Github</a></li>
+	</ul>
+	<p class="sign_in">Admin login</p>
+	<div id="main_content">
+		<div id="header">
+			<p>All Posts</p>
+		</div>
+	</div>
+	<div>
+		<button class="buttons"><%= link_to "New-post", new_post_path %></button>
+	</div>
+	<div>
+		<button class="button">Log out</button>
+	</div>
+		<% flash.each do |name,msg| %>
+		<%= content_tag(:div, msg, class: "alert") %>
+	<% end %>
+	<%= yield %>
 
 </body>
 </html>
