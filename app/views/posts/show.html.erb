@@ -5,8 +5,10 @@
 	</h1>
 <p class="date">
 submitted <%= time_ago_words (@post.created.at) %>Ago
+<%= link_to 'Edit', edit_post_path @post) %>
 </p>
 <p class="body">
 <%= @post.body %>
 </p>
+<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm:'Are you sure?'} %>
 </div>
