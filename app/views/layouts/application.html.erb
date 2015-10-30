@@ -2,9 +2,9 @@
 <html>
 <head>
 	<title>Firstapp</title>
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= stylesheet_link_tag 'application', 'href="http://fonts.googleapis.com/css?family=open-sans' %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag "application", href="http://fonts.googleapis.com/css?family=open-sans" %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,7 +12,7 @@
 		
 		<div id ="logo">
 			<%= link_to root_path do %>
-			<%= image_tag "kasa.jpg" %>
+			
 			<% end %>
 		</div>
 	</div>
@@ -32,6 +32,7 @@
 			<p>All Posts</p>
 		</div>
 	</div>
+	<% if user_signed_in? %>
 	<div>
 		<button class="buttons"><%= link_to "New-post", new_post_path %></button>
 	</div>
