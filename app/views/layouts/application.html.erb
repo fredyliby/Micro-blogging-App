@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Firstapp</title>
-		<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-		<%= stylesheet_link_tag "application", 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		<%= csrf_meta_tags %>
-	</head>
-	<body>
-
-		<div id="sidebar">			
-			<div id ="logo">
-				<%= link_to "HOME", '/', class: "homelink" %>
-				<%= image_tag "kasa.jpg" , size: "60x45" %>  				
+<head>
+	<title>Firstapp</title>
+	<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+	<%= stylesheet_link_tag "application", 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="sidebar">			
+		<div id ="logo">
+			<%= image_tag "kasa.jpg" , size: "60x45" %>  				
+		</div>		
+		<Ul>
+			<li class="category">website</li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li>About</li>
+		</Ul>
+		<ul>
+			<li class ="category"></li>
+			<li><a href="mailto :fredyliby@verizon.net">Email</a></li>
+			<li><a href="https://github.com/fredyliby">Github</a></li>
+		</ul>
+	</div>
+		<p class="sign_in">Admin login</p>
+	<div class="container">
+		<div id="main_content">
+			<div id="header">
+				<%= link_to "All Posts", posts_path %>
 			</div>
-		
-			<Ul>
-				<li class="category">website</li>
-				<li><%= link_to "Blog", root_path %></li>
-				<li>About</li>
-			</Ul>
-			<ul>
-				<li class ="category"></li>
-				<li><a href="mailto :fredyliby@verizon.net">Email</a></li>
-				<li><a href="https://github.com/fredyliby">Github</a></li>
-			</ul>
 		</div>
-			<p class="sign_in">Admin login</p>
-		<div class="container">
-			<div id="main_content">
-				<div id="header">
-					<%= link_to "All Posts", posts_path %>
+			<% if user_signed_in? %>
+	<nav class="navbar">
+		<ul>
+			<li>
+				<div>
+					<button class="buttons"><%= link_to "New-post", new_post_path %></button>
 				</div>
-			</div>
-				<% if user_signed_in? %>
+			</li>
+		<li>
 			<div>
-				<button class="buttons"><%= link_to "New-post", new_post_path %></button>
+				<button class="buttons"><%= link_to "Log out" %></button>
 			</div>
-			<div>
-				<button class="button"><%= link_to "Log out", new_post_path %></button>
-			</div>
-			<% end %>
-			    <% flash.each do |name,msg| %>
-				<%= content_tag(:div, msg, class: "alert") %>
-			<% end %>
-			<%= yield %>
+		</li>
+	<li>
+		<div>
+			<button class="buttons"><%= link_to "Sign up", new_user_registration_path %></button>
 		</div>
-	</body>
+	</li>
+	<li>
+		<div>
+			<button class="buttons"><%= link_to "Sign in", new_user_session_path %></button>
+		</div>
+	</li>	
+		</ul>
+	</nav>
+		<% end %>
+		    <% flash.each do |name,msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+			<% end %>
+		<%= yield %>
+	</div>
+</body>
 </html>

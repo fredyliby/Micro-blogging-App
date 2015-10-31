@@ -13,6 +13,10 @@ class PostsController < ApplicationController
 		else render 'new'
 		end
 	end
+	def show
+		@post = Post.find(params[:id])
+	end
+
 	def edit
 		@post = Post.find(params[:id])
 	end
@@ -34,7 +38,5 @@ class PostsController < ApplicationController
 	def post_params
 		params.require(:post).permit(:title, :body)
 	end
-	def show
-		@post = Post.find(params[:id])
-	end
+	
 end
