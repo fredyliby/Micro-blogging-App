@@ -8,6 +8,7 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="blogname"><h1>TALKY BLOG</h1></div>
 	<div id="sidebar">			
 		<div id ="logo">
 			<%= image_tag "kasa.jpg" , size: "60x45" %>  				
@@ -31,6 +32,10 @@
 			</div>
 		</div>
 			<% if user_signed_in? %>
+			 <p>Welcome <%= current_user.email %></p>
+  			<%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
+			<% else %>
+  			<p>You are not signed in.</p>
 	<nav class="navbar">
 		<ul>
 			<li>
@@ -40,22 +45,22 @@
 			</li>
 		<li>
 			<div>
-				<button class="buttons"><%= link_to "Log out" %></button>
+				<button class="buttons"><%= link_to "Log out" %></button>			
 			</div>
 		</li>
 	<li>
 		<div>
-			<button class="buttons"><%= link_to "Sign up", new_user_registration_path %></button>
+			<button class="buttons"><%= link_to "Sign up", user_session_path %></button>
 		</div>
 	</li>
 	<li>
 		<div>
-			<button class="buttons"><%= link_to "Sign in", new_user_session_path %></button>
+			<button class="buttons"><%= link_to "Log in", new_user_session_path %></button>
 		</div>
 	</li>	
 		</ul>
 	</nav>
-		<% end %>
+		<% end %>		
 		    <% flash.each do |name,msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 			<% end %>
