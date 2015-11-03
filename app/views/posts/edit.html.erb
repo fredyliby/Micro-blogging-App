@@ -1,2 +1,15 @@
-<%= render 'form' %>
-<% edit Post %>
+<h1>EDIT FORM</h1>
+<%= form_for @post do |f| %>
+
+<p>
+	<%= f.label :title %><br>
+	<%= f.text_field :title %>
+</p>
+	<p>
+		<%= f.label :body %><br>		
+	</p>			
+<p>
+	<%= f.text_area :body %>
+</p>
+		<%= f.submit %>
+		<% end %>	

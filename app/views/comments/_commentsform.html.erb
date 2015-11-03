@@ -1,13 +1,13 @@
-<% form_for ([@post.comments.build]) do |f| %>
-	<p>
+<%= form_for Comment.new, url: {controller: :comments, action: :create} do |f| %>
+<p>
 	<%= f.label :name %>
 	<%= f.text_field :name %>
-	</p>
-	<p>
+</p>
+<p>
 	<%= f.label :body %>
 	<%= f.text_field :body %>
-	</p><br>
-	<p>
+</p><br>
+<p>
 	<%= f.submit %>
-	</p>
+</p>
 <% end %>
