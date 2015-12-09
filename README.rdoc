@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ABOUT:
 
-Things you may want to cover:
+  This is a Micro-blogging-App that allows Users to Post their blog.
+  
+TECHNOLOGIES USED:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  Front-end:Bootstrap-Saas,CSS
+  Back-end:Ruby,Ruby on Rails,Ruby gems include-Devise.
+  
+  FEATURES:
+  
+    Users Signup, create a Post, Edit and Delete a Post.
+    Users can also  Comment on a Post.
