@@ -1,5 +1,11 @@
 
 class CommentsController < ApplicationController
+
+	def index
+	
+
+	end
+
 	def create
 		@post = Post.find(params[:comments][:id])
 		@comment = @post.comments.create(params[:comment].permit(:name, :body))
@@ -11,7 +17,8 @@ class CommentsController < ApplicationController
 	end
 
 	def new
-		@comment = @post.comments
+		# @comment = @post.comments
+		@comment = @comments.new
 	end
 
 	def destroy

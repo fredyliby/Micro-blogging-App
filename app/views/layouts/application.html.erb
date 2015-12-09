@@ -6,24 +6,26 @@
 	<%= stylesheet_link_tag "application", 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
+
 </head>
 <body>
-	<div id="sidebar">			
-		<div id ="logo">
+	<div class="sidebar">			
+		<div class="logo">
 			<%= image_tag "kasa.jpg" , size: "60x45" %>  				
 		</div>		
 		<Ul>
-			<li class="category">website</li>
-			<li><%= link_to "Blog", root_path %></li>
+			<li class="category">websites</li>
 		</Ul>
 		<ul>
-			<li class ="category"></li>			 
+			<div class="category1">
+			<li><%= link_to "Blog", root_path %></li>			 
 			<li><a href="mailto:fredyliby@verizon.net">Email</a></li>
 			<li><a href="https://github.com/fredyliby">Github</a></li>
+			</div>
 		</ul>
 	</div>
-	<div class="container">
-		<nav class="navbar">
+	<div class="container">	
+		<nav class="navbar navbar-default navbar-top-fixed" >
 		<ul>
 			<li>
 				<div>
@@ -32,12 +34,12 @@
 			</li>
 		<li>
 			<div>
-				<button class="buttons"><%= link_to "Log out" %></button>			
+				<button class="buttons"><%= link_to "Log out",destroy_user_session_path, :method => :delete %></button>			
 			</div>
 		</li>
 	<li>
 		<div>
-			<button class="buttons"><%= link_to "Sign up", user_session_path %></button>
+			<button class="buttons"><%= link_to "Sign up",  new_user_registration_path %></button>
 		</div>
 	</li>
 	<li>
@@ -54,7 +56,6 @@
 	</nav>
 			<% if user_signed_in? %>
 			 <p>Welcome <%= current_user.email %></p>
-  			<%= link_to 'Logged In [click to logout]', destroy_user_session_path, :method => :delete %>
 			<% else %>
   			<p>You are not signed in.</p>
 	
@@ -62,6 +63,7 @@
 		    <% flash.each do |name,msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 			<% end %>
+			
 		<%= yield %>
 	</div>
 

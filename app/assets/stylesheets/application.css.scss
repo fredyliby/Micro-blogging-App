@@ -18,9 +18,13 @@
 /* They will automatically be included in application.css.*/
 /*You can use Sass (SCSS) here: http://sass-lang.com/*/
 
+@import "bootstrap-sprockets";
+	@import "bootstrap";
+
  body {
 	font-family: 'Raleway', sans-serif;
 	background-color: #00FFFF;
+
 }
 
 h1, h2, h3, {
@@ -32,7 +36,7 @@ a {
 	color: inherit;
 }
 
-#sidebar {
+.sidebar {
 	width:100px;
 	position: fixed;
 	left: 0;
@@ -40,26 +44,31 @@ a {
 	height: 100%;
 	background: #f5f7f9;
 	padding: 5px;
-	border-right: 1px solid #d6dce0;
-	#logo {
+	border-right: 1px solid #072A36;
+
+	.logo {
 		width: 10px;
 		margin-left: 5px;
 		margin-top: 5px;
+		margin-bottom: 5px;
+		margin-right: 5px;
+		// padding:10px;
+
 	}
 	ul {
 		list-style: none;
 		text-align: left;
-		padding-right: 5px;
+		padding-left: 5px;
 		.category {
 			font-weight: 600;
 			font-size: 10px;
 			text-transform: uppercase;
-			color: #33acb7;
+			color: #F55D7E;
 		}
 		li {
-			padding: 2px;
+			padding: 5px;
 			a {
-				color: #9eafba;
+				color: #072A36;
 				text-decoration: none;
 				transition: all .4s ease; 
 				&:hover {
@@ -74,11 +83,12 @@ a {
 		}
 	}
 	.sign_in {
-		position: absolute;
+	 	position: absolute;
 		right: 10px;
 		top: 80%;
 		font-size: 16px;
 		color: #9eafba;
+		text-align: center;
 	}
 }
 
@@ -123,6 +133,7 @@ a {
 		.buttons {
 			float: left;
 			margin-top: -6px;
+
 			.button {
 				font-size: 5px;
 				margin-left: 5px;
@@ -132,6 +143,7 @@ a {
 	.post_wrapper {
 		padding: 5px;
 		border-bottom: 1px solid #d6dce0;
+
 		
 
 		.title {
@@ -153,6 +165,8 @@ a {
 	}
 	#post_content {
 		padding: 5px;
+
+
 		.title {
 			font-weight: 500;
 			text-decoration: none;
@@ -211,8 +225,14 @@ a {
 			}
 		}
 	}
-	#page_wrapper {
+	#page_wrapper  {
 		padding: 10px;
+		
+
+
+
+
+		
 		#profile_image {
 			width: 100px;
 			float: left;
@@ -239,6 +259,7 @@ a {
 	}
 	.links {
 		margin: 2em 0;
+
 	}
 	input[type="text"], input[type="email"], input[type="password"], textarea {
 		width: 90%;
@@ -270,9 +291,8 @@ a {
 }	
 
 .container {
-	width: 75%;
-	float: right;
-	padding: 10px;
+	width:80%;	
+	padding: 20px;
 }
 
 .navbar {
@@ -280,19 +300,21 @@ a {
     margin-left: auto ;
     margin-right: auto ;
     background-color: #ABCDEF;
+
 }
 .navbar ul {
     list-style-type: none; 
     text-align: center;
     margin: 0 auto;
     padding: 0px;
-    border:2px solid #FF0066;
-    display:table;
+    border:2px solid #F55D7E;
+    // display:table;
     overflow: hidden;
+    border-radius:5px;
 }
-.navbar li{
+.navbar li {
     float: left;
-    padding: 2px;
+    padding: 15px;
     width: 150px;
     margin-left: auto ;
     margin-right: auto ;
@@ -303,9 +325,59 @@ a {
 	font-weight: 400;
 	font-size: 20px;
 	font-style: italic;
-	font-family: cursive; 
 
 }
+
+
+
+.wrapper {
+	text-align:center;
+	background-color:#F9F5FA;
+	border-radius:25px;
+	margin-bottom:10px;
+	margin-left:25px;
+	margin-right:25px;
+	padding:20px;
+	
+}
+
+
+h2 {
+	background-color:#F55D7E;
+	border-radius:10px;
+}
+
+.page-wrapper  {
+	text-align:center;
+	background-color:#F9F5FA;
+	border-radius:25px;
+	margin-top:10px;
+	margin-bottom:10px;
+	margin-left:20px;
+	margin-right:20px;
+	padding:15px;
+	width:90%;
+
+	textarea {
+		height: 150px;
+		width: 90%;
+	}
+#post-title {
+		text-align: left;
+		input[type="text"]{
+			width: 85%;
+		}
+	}
+#post-body {
+		text-align: left;
+	}
+
+}
+
+
+
+
+
 
 
 

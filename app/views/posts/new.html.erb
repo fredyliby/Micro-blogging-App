@@ -1,30 +1,34 @@
 <div class="container">
-<div id="page_wrapper">
-	<h2>NEW POST FORM</h2>
-	<%= form_for :post, url: posts_path do |f| %>
-		 <% if @post.errors.any? %>
-	<div id="errors">
-		<h2><%= pluralize(@post.errors.count, "error") %>prevented this post from saving</h2>	
-	<ul>
-	<% @post.error.full_messages.each do |msg| %>
-			<li><%= msg %></li>	
-	<% end %>
-	</ul>
-	    </div>
-	<% end %>		
-		<p>
-			<%= f.label :title %><br>
-			<%= f.text_field :title %>
-		</p>
-		<p>
-			<%= f.label :body %><br>
-			<%= f.text_area :body %>
-		</p>
-		<p>
-			<%= f.submit %>
-		</p>
-	<% end %>
-</div>
+	<div class="page-wrapper">
+		<div class="row">
+    		<div class="col-md-12">
+				<h2>NEW POST FORM</h2>
+					<%= form_for :post, url: posts_path do |f| %>
+		 				<% if @post.errors.any? %>
+							<div id="errors">
+								<h2><%= pluralize(@post.errors.count, "error") %>prevented this post from saving</h2>	
+								<ul>
+									<% @post.error.full_messages.each do |msg| %>
+										<li><%= msg %></li>	
+									<% end %>
+								</ul>
+	    					</div>
+					<% end %>		
+				<p id="post-title">
+					<%= f.label :title %><br>
+					<%= f.text_field :title %>
+				</p>
+				<p id="post-body">
+					<%= f.label :body %><br>
+					<%= f.text_area :body %>
+				</p>
+				<p>
+					<%= f.submit %><br>
+				</p>
+					<% end %>
+			</div>
+		</div>
+	</div>
 </div>
 
 
