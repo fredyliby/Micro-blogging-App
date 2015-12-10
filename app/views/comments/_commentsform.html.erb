@@ -1,12 +1,12 @@
 <%= form_for Comment.new, url: {controller: :comments, action: :create} do |f| %>
-<p>
+<p id="comment-name">
 	<%= f.label :name %>
-	<%= f.text_field :name %>
+	<%= f.text_field :name %><br>
 </p>
-<p>
+<p id="comment-body">
 	<%= f.label :body %>
 	<%= f.text_field :body %>
-</p><br>
+</p>
 <p>
 	<%= f.submit %>
 </p>

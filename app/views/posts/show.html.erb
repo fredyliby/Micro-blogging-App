@@ -1,25 +1,36 @@
+<div class="container">
 <div id="post_content">
-
-<h1 class="title">
+<div class="wrapper_comment">
+<div class="row">
+<div class="col-md-12">
+<h2 div="comment-title">
 	<%= @post.title %>
-	</h1>
-<p class="date">	
-	Submitted <%= time_ago_in_words(@post.created_at) %> Ago
-		<% if user_signed_in? %>
-	 		<%= link_to 'Edit', edit_post_path(@post) %>
-	 		<%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm:'Are you sure?'} %>
-	 		<% end %>
-</p>
+	</h2>
 <p class="body">
 	<%= @post.body %>
 </p>
 
 <div id="comments">
-	<h2><%= @post.comments.count %>Comments</h2>
+	<h3><%= @post.comments.count %>Comments</h3>
 
 	<% @post.comments.each do |comment| %>
 		<p> <%= comment %> </p>
 	<% end %>
-	<h3>Add your comment</h3>
-		<%= render 'comments/commentsform'%>		
+		
+		<h4>Add your comment</h4>
+		<% if user_signed_in? %>
+		<%= render 'comments/commentsform'%>
+		<% end %>
+	<div class="comment_buttons">
+	<button type="buttons" class="btn btn-primary pull-right btn-md"><%= link_to 'Edit', edit_post_path(@post) %></button>
+	 <button type="buttons" class="btn btn-primary pull-right btn-md"><%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm:'Are you sure?'} %></button>
+	 <p class="date">	
+	Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+</p>
+	 	</div>	
+
+		</div>
+		</div>
+		</div>		
+</div>
 </div>

@@ -1,7 +1,12 @@
-
-<% @posts.each do |post| %>
-	<div class = "post_wrapper">
-	<h2 class = "title"><%= link_to post.title,post %></h2>
-	<p class = "date"><%= post.created_at.strftime ("%B,%d,%y") %></p>
+<div class="container">
+  	<% @posts.each do |post| %>
+	  <div class = "post_wrapper2">
+	   <div class="row">
+	    <div class="col-md-6">
+	      <h2 class = "title"><%= link_to post.title,post %></h2>
+	       <p div= "date"><%= post.created_at.strftime ("%B,%d,%y") %></p>
+	    </div>
+	  </div>
 	</div>
 	<% end %>
+</div>
