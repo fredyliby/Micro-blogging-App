@@ -1,15 +1,23 @@
-<h1>EDIT FORM</h1>
-<%= form_for @post do |f| %>
+<div class="container">
+	<div class="page-wrapper">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>EDIT FORM</h2>
+				<%= form_for @post do |f| %>
 
-<p>
-	<%= f.label :title %><br>
-	<%= f.text_field :title %>
-</p>
-	<p>
-		<%= f.label :body %><br>		
-	</p>			
-<p>
-	<%= f.text_area :body %>
-</p>
-		<%= f.submit %>
-		<% end %>	
+				<p id="post-title">
+					<%= f.label :title %><br>
+					<%= f.text_field :title %>
+				</p>
+				<p id="post-body">
+					<%= f.label :body %><br>		
+					<%= f.text_area :body %>
+				</p>
+				<p>
+					<%= f.submit %>
+				</p>
+				<% end %>	
+			</div>
+		</div>
+	</div>
+</div>

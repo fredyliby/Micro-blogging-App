@@ -6,7 +6,6 @@
 	<%= stylesheet_link_tag "application", 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
-
 </head>
 <body>
 	<div class="sidebar">			
@@ -18,55 +17,54 @@
 		</Ul>
 		<ul>
 			<div class="category1">
-			<li><%= link_to "Blog", root_path %></li>			 
-			<li><a href="mailto:fredyliby@verizon.net">Email</a></li>
-			<li><a href="https://github.com/fredyliby">Github</a></li>
+				<li><%= link_to "Blog", root_path %></li>			 
+				<li><a href="mailto:fredyliby@verizon.net">Email</a></li>
+				<li><a href="https://github.com/fredyliby">Github</a></li>
 			</div>
 		</ul>
 	</div>
 	<div class="container">	
 		<nav class="navbar navbar-default navbar-top-fixed" >
-		<ul>
-			<li>
-				<div>
-					<button class="buttons"><%= link_to "New-post", new_post_path %></button>
-				</div>
-			</li>
-		<li>
-			<div>
-				<button class="buttons"><%= link_to "Log out",destroy_user_session_path, :method => :delete %></button>			
-			</div>
-		</li>
-	<li>
-		<div>
-			<button class="buttons"><%= link_to "Sign up",  new_user_registration_path %></button>
-		</div>
-	</li>
-	<li>
-		<div>
-			<button class="buttons"><%= link_to "Log in", new_user_session_path %></button>
-		</div>
-	</li>
-		<li>
-			<div>
-				<button class="buttons"><%= link_to "All Posts", posts_path %></button>
-			</div>
-		</li>	
-		</ul>
-	</nav>
-			<% if user_signed_in? %>
-			 <p>Welcome <%= current_user.email %></p>
-			<% else %>
-  			<p>You are not signed in.</p>
-	
+			<ul>
+				<li>
+					<div>
+						<button class="buttons"><%= link_to "New-post", new_post_path %></button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="buttons"><%= link_to "Log out",destroy_user_session_path, :method => :delete %></button>			
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="buttons"><%= link_to "Sign up",  new_user_registration_path %></button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="buttons"><%= link_to "Log in", new_user_session_path %></button>
+					</div>
+				</li>
+				<li>
+					<div>
+						<button class="buttons"><%= link_to "All Posts", posts_path %></button>
+					</div>
+				</li>	
+			</ul>
+		</nav>
+		<% if user_signed_in? %>
+		<p>Welcome <%= current_user.email %></p>
+		<% else %>
+		<p>You are not signed in.</p>
+
 		<% end %>		
-		    <% flash.each do |name,msg| %>
-			<%= content_tag(:div, msg, class: "alert") %>
-			<% end %>
-			
+		<% flash.each do |name,msg| %>
+		<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
 		<%= yield %>
 	</div>
-
-	</div>
+</div>
 </body>
 </html>
