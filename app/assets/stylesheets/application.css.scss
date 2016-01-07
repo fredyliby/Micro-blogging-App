@@ -14,44 +14,44 @@
  *= require_self
  */
 
-/* Place all the styles related to the posts controller here.*/
-/* They will automatically be included in application.css.*/
-/*You can use Sass (SCSS) here: http://sass-lang.com/*/
+ /* Place all the styles related to the posts controller here.*/
+ /* They will automatically be included in application.css.*/
+ /*You can use Sass (SCSS) here: http://sass-lang.com/*/
 
-@import "bootstrap-sprockets";
-	@import "bootstrap";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
  body {
-	font-family: 'Raleway', sans-serif;
-	background-color: #00FFFF;
+ 	font-family: 'Raleway', sans-serif;
+ 	background-color: #00FFFF;
 
-}
+ }
 
-h1, h2, h3, {
-	font-weight: 500;
-}
+ h1, h2, h3, {
+ 	font-weight: 500;
+ }
 
-a {
-	text-decoration: none;
-	color: inherit;
-}
+ a {
+ 	text-decoration: none;
+ 	color: inherit;
+ }
 
-.sidebar {
-	width:100px;
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100%;
-	background: #f5f7f9;
-	padding: 5px;
-	border-right: 1px solid #072A36;
+ .sidebar {
+ 	width:100px;
+ 	position: fixed;
+ 	left: 0;
+ 	top: 0;
+ 	height: 100%;
+ 	background: #f5f7f9;
+ 	padding: 5px;
+ 	border-right: 1px solid #072A36;
 
-	.logo {
-		width: 10px;
-		margin-left: 5px;
-		margin-top: 5px;
-		margin-bottom: 5px;
-		margin-right: 5px;
+ 	.logo {
+ 		width: 10px;
+ 		margin-left: 5px;
+ 		margin-top: 5px;
+ 		margin-bottom: 5px;
+ 		margin-right: 5px;
 		// padding:10px;
 
 	}
@@ -83,7 +83,7 @@ a {
 		}
 	}
 	.sign_in {
-	 	position: absolute;
+		position: absolute;
 		right: 10px;
 		top: 80%;
 		font-size: 16px;
@@ -108,11 +108,11 @@ a {
 }
 
 .clearfix:after {
-   content: ".";
-   visibility: hidden;
-   display: block;
-   height: 0;
-   clear: both;
+	content: ".";
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
 }
 
 #main_content {
@@ -297,28 +297,28 @@ a {
 }
 
 .navbar {
-    width: 100%;
-    margin-left: auto ;
-    margin-right: auto ;
-    background-color: #ABCDEF;
+	width: 100%;
+	margin-left: auto ;
+	margin-right: auto ;
+	background-color: #ABCDEF;
 
 }
 .navbar ul {
-    list-style-type: none; 
-    text-align: center;
-    margin: 0 auto;
-    padding: 0px;
-    border:2px solid #F55D7E;
+	list-style-type: none; 
+	text-align: center;
+	margin: 0 auto;
+	padding: 0px;
+	border:2px solid #F55D7E;
     // display:table;
     overflow: hidden;
     border-radius:5px;
 }
 .navbar li {
-    float: left;
-    padding: 15px;
-    width: 150px;
-    margin-left: auto ;
-    margin-right: auto ;
+	float: left;
+	padding: 15px;
+	width: 150px;
+	margin-left: auto ;
+	margin-right: auto ;
 }
 
 .blogname {
@@ -363,13 +363,13 @@ h2 {
 		height: 150px;
 		width: 90%;
 	}
-#post-title {
+	#post-title {
 		text-align: left;
 		input[type="text"]{
 			width: 85%;
 		}
 	}
-#post-body {
+	#post-body {
 		text-align: left;
 	}
 
@@ -418,5 +418,5 @@ h2 {
 
 
 
- 
+
 
