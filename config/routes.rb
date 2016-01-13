@@ -5,8 +5,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   
-  resources :posts
-  resources :comments
+  # resources :posts
+  # resources :comments
 
   resources :posts do
     resources :comments

@@ -9,19 +9,19 @@ class CommentsController < ApplicationController
 		
 	end
 
-		def create
-		   @post = Post.find(params[:post_id])
-		   @comment = Comment.new(comment_params)
-			# @comment = @post.comments.create(params[comment_params])
-			@comment.user.id = current_user.id
-			@comment.post_id = params[:post_id]
-			if @comments.save
-				flash[:success] = "Comment created!"
-				redirect_to @post
-			else
-				redirect_to post_path(@post)
-			end
+	def create
+		 @post = Post.find(params[:post_id])
+		 @comment = Comment.new(comment_params)
+		# @comment = @post.comments.create(params[comment_params])
+		 @comment.user = current_user
+		@comment.post = @post
+		if @comment.save
+			flash[:success] = "Comment created!"
+			redirect_to @post
+		else
+			redirect_to post_path(@post)
 		end
+	end
 
 
 		def destroy

@@ -6,13 +6,13 @@
 				<h2 div="comment-title"><%= @post.title %></h2>							
 				<p class="body"><%= @post.body %></p>
 				<div id="comments">
-					<h3><%= @post.comments.count %>Comments</h3>
+					<h3><%= @post.comments.count %> Comments</h3>
 					<% @post.comments.each do |comment| %>
-					<p> <%= comment %> </p>
+					<p> <%= comment.body %> </p>
 					<% end %>	
 					<h4>Add your comment</h4>
 					<% if user_signed_in? %>
-					<%= render 'comments/commentsform'%>
+					<%= render 'comments/commentsform', :locals => {:post => @post} %>
 					<% end %>
 					<div class="comment_buttons">
 						<button type="buttons" class="btn btn-primary pull-right btn-md"><%= link_to 'Edit', edit_post_path(@post) %></button>

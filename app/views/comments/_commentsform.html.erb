@@ -1,4 +1,5 @@
-<%= form_for Comment.new, url: {controller: :comments, action: :create} do |f| %>
+<%= form_for Comment.new, url: post_comments_path(@post.id) do |f| %>
+<%= @post.id %>
 <p id="comment-name">
 	<%= f.label :name %>
 	<%= f.text_field :name %><br>
