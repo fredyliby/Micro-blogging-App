@@ -23,12 +23,12 @@
 
  body {
  	font-family: 'Raleway', sans-serif;
- 	background-color: #00FFFF;
+ 	background-color: #79A0AB;
 
  }
 
  h1, h2, h3, {
- 	font-weight: 500;
+ 	font-weight: 400;
  }
 
  a {
@@ -43,7 +43,7 @@
  	top: 0;
  	height: 100%;
  	background: #f5f7f9;
- 	padding: 5px;
+ 	padding:5px;
  	border-right: 1px solid #072A36;
 
  	.logo {
@@ -96,7 +96,7 @@
 	outline: none;
 	background: transparent;
 	border: 1px solid #d6dce0;
-	padding: 10px;
+	padding: 5px;
 	border-radius: 20px;
 	&:hover {
 		border: 1px solid #33acb7;
@@ -293,14 +293,16 @@
 
 .container {
 	width:80%;	
-	padding: 20px;
+	// padding: 5px;
+
 }
 
-.navbar {
+.navbar{
 	width: 100%;
-	margin-left: auto ;
-	margin-right: auto ;
-	background-color: #ABCDEF;
+	// margin-left: auto ;
+	// margin-right: auto ;
+	background-color: #262829;
+	margin-left:2px;
 
 }
 .navbar ul {
@@ -308,23 +310,23 @@
 	text-align: center;
 	margin: 0 auto;
 	padding: 0px;
-	border:2px solid #F55D7E;
+	// border:2px solid #F55D7E;
     // display:table;
     overflow: hidden;
-    border-radius:5px;
+    // border-radius:5px;
 }
 .navbar li {
-	float: left;
-	padding: 15px;
-	width: 150px;
-	margin-left: auto ;
-	margin-right: auto ;
+	float: right;
+	padding:25px;
+	// width: 150px;
+	// margin-left: auto ;
+	// margin-right: auto ;
 }
 
 .blogname {
 	text-align: center;
-	font-weight: 400;
-	font-size: 20px;
+	font-weight: 200;
+	font-size: 10px;
 	font-style: italic;
 
 }
@@ -334,18 +336,19 @@
 .wrapper {
 	text-align:center;
 	background-color:#F9F5FA;
-	border-radius:25px;
+	// border-radius:25px;
 	margin-bottom:10px;
-	margin-left:25px;
-	margin-right:25px;
-	padding:20px;
+	margin-left:20px;
+	margin-right:20px;
+	padding:15px;
 	
 }
 
 
 h2 {
-	background-color:#F55D7E;
+	background-color:#2E2C2C;
 	border-radius:10px;
+	color:white;
 }
 
 .page-wrapper  {
@@ -376,6 +379,8 @@ h2 {
 }
 .post_wrapper2 h2 {
 	text-align:center;
+	font-size:15px;
+	 margin: 0 auto;
 	
 }
 .wrapper_comment {
